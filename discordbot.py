@@ -98,6 +98,7 @@ async def on_message(message):
                 for keyword in keywords:
                     if not keyword in message.content:
                         check = False
+                        await message.channel.send('fuck') 
                         break
                 if check:
                     if message.author.nick == None:

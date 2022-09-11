@@ -97,15 +97,9 @@ async def on_message(message):
                 check = True
                 for keyword in keywords:
                     await message.channel.send(f'{keyword} \n {keywords}')  
-            #        if type(keyword) == list:
-            #            for x in keyword:
-            #                if not x in message.content:
-            #                    check = False
-            #                    break
-            #        elif not keyword in message.content:
-                 if not keyword in message.content:
-                     check = False                   
-                     break
+                    if not keyword in message.content:
+                        check = False                   
+                        break
                 if check:
                     if message.author.nick == None:
                         username = message.author.name

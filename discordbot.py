@@ -96,9 +96,13 @@ async def on_message(message):
                 keywords = row[1].split()
                 check = True
                 for keyword in keywords:
-                    if not keyword in message.content:
-                        check = False
-                        await message.channel.send('fuck') 
+                    if type(keyword) == list:
+                        for x in keyword:
+                            if not x in message.content:
+                                check = False
+                                break
+                    elif not keyword in message.content:
+                        check = False                   
                         break
                 if check:
                     if message.author.nick == None:

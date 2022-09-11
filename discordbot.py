@@ -95,8 +95,7 @@ async def on_message(message):
             if (message.channel.name == row[0] or row[0] == ''):
                 keywords = row[1].split()
                 check = True
-                for keyword in keywords:
-                    await message.channel.send(f'{keyword} \n {keywords}')  
+                for keyword in keywords: 
                     if not keyword in message.content:
                         check = False                   
                         break
